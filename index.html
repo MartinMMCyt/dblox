@@ -136,25 +136,7 @@ ESC - Pause Game
 </div>
 </div>
 <img src="terrain.png" id="terrain">
-<script>
-  let bgMusic;
-
-  function initMusic() {
-    if (!bgMusic) {
-      bgMusic = new Audio("music.mp3");
-      bgMusic.loop = true;
-      bgMusic.volume = 0.6; // Optional volume setting
-      bgMusic.play().catch(e => {
-        console.warn("Autoplay failed:", e);
-      });
-    }
-  }
-
-  document.getElementById("newgame").addEventListener("click", function () {
-    initMusic();
-    // You can also start the game here
-  });
-</script>
+<script src= "music.js" ></script>
 
       <!-- Global site tag (gtag.js) - Google Analytics
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81855592-1"></script>
