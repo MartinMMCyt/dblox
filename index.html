@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
-<html><head>
+<html>
+<head>
 <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 <meta content="utf-8" http-equiv="encoding">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -24,7 +25,8 @@
 
 <script id="main-fs" type="fragment"> precision mediump float; varying vec2 vTexCoord; varying vec3 vLighting; varying float vFog; uniform sampler2D uSampler; const vec4 kFogColor=vec4(0.5, 0.8, 0.98, 1.0); void main(void){vec4 textureColor=texture2D(uSampler, vTexCoord); if (textureColor.a <=0.5){discard;}else{textureColor=vec4(textureColor.rgb * vLighting, textureColor.a); textureColor=vFog * 1.0 * kFogColor + (1.0 - vFog) * textureColor; gl_FragColor=textureColor;}}</script>
 
-<style>body{height:100%;width:100%;margin:0px;padding:0px;background-color: black;-webkit-tap-highlight-color:rgba(0,0,0,0);overflow:hidden;}#canvas_container{position: relative; transform-origin:0px 0px;}#canvas_container, div.page{width: 854px; height: 480px;}div.page{display: none; font-size: 18px; position: absolute; top: 0; left: 0; color: white; text-align: center;}*{font-family: Verdana;}.msg{text-align: center; font-size: 32px; height: 40px; left: 0; margin-top: 15%; margin-bottom: 5%;}
+<style>
+body{height:100%;width:100%;margin:0px;padding:0px;background-color: black;-webkit-tap-highlight-color:rgba(0,0,0,0);overflow:hidden;}#canvas_container{position: relative; transform-origin:0px 0px;}#canvas_container, div.page{width: 854px; height: 480px;}div.page{display: none; font-size: 18px; position: absolute; top: 0; left: 0; color: white; text-align: center;}*{font-family: Verdana;}.msg{text-align: center; font-size: 32px; height: 40px; left: 0; margin-top: 15%; margin-bottom: 5%;}
 
 #dpadcont img {pointer-events: none;}
 
@@ -82,10 +84,6 @@ color: #FFFFA0;
 #embedgame {
 	display: none;
 }
-#throbber {
-  display: block !important;
-  visibility: visible !important;
-}
 </style>
 </head>
 <body>
@@ -109,10 +107,10 @@ color: #FFFFA0;
 </div>
 <div id="embed_code" style="display:none;"><br>Copy and paste the code below:<br><input style="width:365px;" value="<iframe src=&quot;//www.gamessumo.com?embed=minecraft&quot; style=&quot;width:854px;height:480px;border:none;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;></iframe>" onclick="this.select();"></div>
 <div id="instructions">
-WASD or arrow keys to move │ Space to jump<br>
+WASD or Arrow Keys to Move │ Space to Jump<br>
 Left Click - Mine Blocks │ Right Click - Place Blocks<br>
 1-9 - Select Item Slots │ T - Throw Item │ C = Plant Tree<br>
-CTRL-S - Save │ CTRL-L - Load │ F1 - HUD<br>
+CTRL+S - Save │ CTRL+L - Load │ F1 - HUD<br>
 ESC - Pause Game
 </div>
 <div id="header">
@@ -135,18 +133,16 @@ ESC - Pause Game
 <script src= "music.js" ></script>
 <div id="footer-icons" style="position:absolute;bottom:10px;left:10px;display:flex;gap:10px;">
   <a href="https://www.youtube.com/@MMC-Gaming" target="_blank">
-    <img src="yt-icon.png" width="48" height="32" alt="YouTube" />
+    <img src="yt-icon.png" width="48" height="48" alt="YouTube" />
   </a>
   <a href="https://dc.gg/martin" target="_blank">
     <img src="dc-icon.png" width="48" height="48" alt="Discord" />
   </a>
   <a href="https://scratch.mit.edu/users/Martin_MMC" target="_blank">
-    <img src="scratch-icon.png" width="36" height="48" alt="Scratch" />
+    <img src="scratch-icon.png" width="48" height="48" alt="Scratch" />
   </a>
 </div>
-
-
-      <!-- Global site tag (gtag.js) - Google Analytics
+<!-- Global site tag (gtag.js) - Google Analytics
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81855592-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
