@@ -7,7 +7,7 @@
     sourceMP3.type = "audio/mpeg";
 
     sourceOGG.src = `${name}.ogg`;
-    sourceOGG.type = "audio/ogg`;
+    sourceOGG.type = "audio/ogg";
 
     audio.appendChild(sourceMP3);
     audio.appendChild(sourceOGG);
