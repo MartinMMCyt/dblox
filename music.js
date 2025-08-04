@@ -1,4 +1,4 @@
-function createAudioWithFallback(name) {
+  function createAudioWithFallback(name) {
     const audio = document.createElement("audio");
     const sourceMP3 = document.createElement("source");
     const sourceOGG = document.createElement("source");
@@ -7,13 +7,12 @@ function createAudioWithFallback(name) {
     sourceMP3.type = "audio/mpeg";
 
     sourceOGG.src = `${name}.ogg`;
-    sourceOGG.type = "audio/ogg";
+    sourceOGG.type = "audio/ogg`;
 
     audio.appendChild(sourceMP3);
     audio.appendChild(sourceOGG);
 
     document.body.appendChild(audio); // Needed for sources to load
-
     audio.loop = false;
     audio.volume = 0.6;
 
@@ -21,7 +20,6 @@ function createAudioWithFallback(name) {
   }
 
   const menuMusic = createAudioWithFallback("menu");
-
   const gameTracks = [
     createAudioWithFallback("game1"),
     createAudioWithFallback("game2"),
@@ -33,7 +31,18 @@ function createAudioWithFallback(name) {
   let currentGameTrack = null;
   let isMuted = false;
 
-  // Fade in helper
+  // Handle menu music looping manually
+  menuMusic.addEventListener("ended", () => {
+    const isOnMenu = document.getElementById("title").style.display !== "none";
+    const isPaused = document.getElementById("pause").style.display !== "none";
+
+    if ((isOnMenu || isPaused) && !isMuted) {
+      menuMusic.currentTime = 0;
+      menuMusic.play().catch(err => console.warn("Autoplay blocked:", err));
+    }
+  });
+
+  // Fade helpers
   function fadeIn(audio, duration = 1000) {
     audio.volume = 0;
     audio.play();
@@ -47,7 +56,6 @@ function createAudioWithFallback(name) {
     }, duration / (0.6 / step));
   }
 
-  // Fade out helper
   function fadeOut(audio, duration = 500, callback) {
     let step = 0.06;
     let interval = setInterval(() => {
@@ -102,10 +110,12 @@ function createAudioWithFallback(name) {
     document.getElementById("muteIcon").style.display = visible ? "block" : "none";
   }
 
+  // Play menu music on first click
   window.addEventListener("click", () => {
     if (!isMuted) playMusic(menuMusic);
   }, { once: true });
 
+  // NEW GAME
   document.getElementById("newgame").addEventListener("click", () => {
     fadeOut(menuMusic, 500, () => {
       playNextGameTrack();
@@ -117,6 +127,7 @@ function createAudioWithFallback(name) {
     setMuteIconVisible(false);
   });
 
+  // RESUME
   document.getElementById("resumegame").addEventListener("click", () => {
     playMusic(currentGameTrack);
     document.getElementById("pause").style.display = "none";
@@ -124,6 +135,7 @@ function createAudioWithFallback(name) {
     setMuteIconVisible(false);
   });
 
+  // SAVE & QUIT
   document.getElementById("savegame").addEventListener("click", () => {
     playMusic(menuMusic);
     document.getElementById("pause").style.display = "none";
@@ -131,6 +143,7 @@ function createAudioWithFallback(name) {
     setMuteIconVisible(true);
   });
 
+  // Manual pause trigger
   function pauseGame() {
     playMusic(menuMusic);
     document.getElementById("pause").style.display = "block";
@@ -140,7 +153,7 @@ function createAudioWithFallback(name) {
 
   window.pauseGame = pauseGame;
 
-  // Mute icon button
+  // Mute icon
   const muteBtn = document.createElement("img");
   muteBtn.id = "muteIcon";
   muteBtn.src = "unmute.png";
