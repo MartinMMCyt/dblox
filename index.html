@@ -46,13 +46,13 @@ div.page {
 }
 #game-logo {
     max-width: 100%;
-    height: 80px; /* Matches your original logo size */
+    height: 80px;
     display: block;
 }
 #minecraft-splash {
     position: absolute;
-    bottom: -10px;  /* Slightly overlaps the logo */
-    right: -15px;   /* Slight offset to float outside the logo */
+    bottom: -10px;
+    right: -15px;
     transform: rotate(-20deg);
     font-size: clamp(16px, 2vw, 28px);
     font-weight: bold;
@@ -68,43 +68,102 @@ div.page {
     100% { transform: scale(1.07) rotate(-20deg); }
 }
 
-/* Keep other styles like buttons, HUD, etc. unchanged */
+/* ✅ Minecraft-style buttons */
+.mcbutton {
+    height: 36px;
+    width: 250px;
+    outline: 2px solid black;
+    position: relative;
+    margin-bottom: 11px;
+    display: inline-block;
+    background-color: #6f6f6f;
+    background-repeat: repeat;
+    padding:4px;
+    font-size:19px;
+    font-weight:normal;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px #4C4C4C;
+    border-bottom: 4px solid #565656;
+    border-right: 2px solid #565656;
+    border-left: 2px solid #AAA;
+    border-top: 2px solid #AAA;
+    box-sizing: border-box;
+    cursor:pointer;
+    text-decoration:none;
+}
+.mcbutton span {
+    position: relative;
+    line-height: 40px;
+    bottom: 3px;
+}
+.mcbutton:hover {
+    border-bottom: 4px solid #59639A;
+    border-right: 2px solid #59639A;
+    border-left: 2px solid #BDC6FF;
+    border-top: 2px solid #BDC6FF;
+    background-color: #7c86be;
+    color: #FFFFA0;
+}
+
+/* ✅ Original game CSS restored */
+.msg { text-align: center; font-size: 32px; height: 40px; left: 0; margin-top: 15%; margin-bottom: 5%; }
+#dpadcont img { pointer-events: none; }
+#instructions { font-size:15px; margin-top:0px; line-height:112%; display:none; }
+#failinit { position: absolute; left: 50%; top: 194px; width: 70%; margin-left: -35%; margin-top: -24px; height: 48px; font-size: 20px; color: red; text-align: center; display: none; z-index:2; }
+#newgame { margin-top:154px; }
+.toolbox { position: absolute; width: 48px; height: 48px; border: solid 2px rgb(128, 128, 128); background: rgba(128, 128, 128, 0.5); }
+#toolbox { left: 16px; bottom: 3.33%; }
+.tool { background: transparent; }
+#held { position: absolute; z-index: 2; pointer-events: none; }
+#terrain { display: none; }
+#chat { position: absolute; height: 83%; top: 0; left: 16px; color: white; overflow-y: hidden; }
+#clog { height: 400px; }
+a, a:visited { text-decoration:none; }
+#footer { position:absolute; bottom:0px; left:50%; margin-left:-364px; width:728px; height:90px; overflow:hidden; display:block; }
+#header { position:absolute; top:0px; left:50%; margin-left:-364px; width:728px; height:90px; overflow:hidden; }
+#pause { top:154px; height:0px; }
+#title { background-image:url(panorama3.jpg); background-size:1093px; animation:animatedbg 20s infinite; }
+@keyframes animatedbg { 0% { background-position: 0 0; } 50% { background-position: -240px 0; } 100% { background-position: 0 0; } }
+#embedgame { display:none; }
 </style>
 </head>
+
 <body>
 <div id="canvas_container" style="transform: scale(0.627083, 0.627083);">
-<canvas id="canvas" width="854" height="660"></canvas>
+    <canvas id="canvas" width="854" height="660"></canvas>
 
-<div id="title" class="page" style="display:block;">
-    <!-- ✅ Fixed Logo Container with splash overlapping -->
-    <div class="logo-container">
-        <img src="logo.png" alt="Game Logo" id="game-logo">
-        <div id="minecraft-splash"></div>
-    </div>
+    <div id="title" class="page" style="display:block;">
+        <!-- ✅ Fixed Logo Container with splash overlapping -->
+        <div class="logo-container">
+            <img src="logo.png" alt="Game Logo" id="game-logo">
+            <div id="minecraft-splash"></div>
+        </div>
 
-    <div id="menubuttons" style="display:block;">
-        <span id="newgame" class="mcbutton">NEW GAME</span><br>
-        <span id="loadgame" class="mcbutton">LOAD GAME</span><br>
-        <span id="moregame" class="mcbutton"><a href="https://sites.google.com/view/bloxd-resources" target="_BLANK" style="padding:5px 48px;border:none;color:#fff;">MORE GAMES</a></span><br>
-        <span id="helpgame" class="mcbutton">HOW TO PLAY</span><br>
-        <span id="embedgame" class="mcbutton">EMBED ON YOUR SITE</span><br>
+        <div id="menubuttons" style="display:block;">
+            <span id="newgame" class="mcbutton">NEW GAME</span><br>
+            <span id="loadgame" class="mcbutton">LOAD GAME</span><br>
+            <span id="moregame" class="mcbutton"><a href="https://sites.google.com/view/bloxd-resources" target="_BLANK" style="padding:5px 48px;border:none;color:#fff;">MORE GAMES</a></span><br>
+            <span id="helpgame" class="mcbutton">HOW TO PLAY</span><br>
+            <span id="embedgame" class="mcbutton">EMBED ON YOUR SITE</span><br>
+        </div>
     </div>
 </div>
 
 <script>
 const minecraftSplashes = [
     "100% more fun!",
-    "Blox-tastic!",
+    "Block-tastic!",
     "Dig and build!",
     "Just like the real thing!",
-    "This is a splash text!",
+    "Craft your world!",
     "Now with extra pixels!",
-    "Gorillas not included!",
+    "Creepers not included!",
     "Survival vibes!",
-    "Break all the blox!",
+    "Break all the blocks!",
     "Better than reality!",
-    "Made by an idiot <3",
-    "Clone of a clone!"
+    "Made with love <3",
+    "Extra cubic goodness!"
 ];
 
 function setRandomSplash() {
@@ -113,8 +172,7 @@ function setRandomSplash() {
 }
 
 setRandomSplash();
-setInterval(setRandomSplash, 4000);
+setInterval(setRandomSplash, 3000);
 </script>
-
 </body>
 </html>
