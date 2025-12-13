@@ -8,9 +8,9 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="viewport" content="width=device-width, minimal-ui, initial-scale=1, maximum-scale=1, user-scalable=0">
 <title>DBlox.io - Free Sandbox Game!</title>
-<link rel="icon" href="icon.png" type="image/png" />
-<script src="gl-matrix-min.js"></script>
-<script src="main-mobile.js"></script>
+<link rel="icon" href="images/icon.png" type="image/png" />
+<script src="js/gl-matrix-min.js"></script>
+<script src="js/main-mobile.js"></script>
 
 <script id="wireframe-vs" type="vertex">attribute vec3 aPos; uniform mat4 uMVMatrix; uniform mat4 uPMatrix; void main(void){gl_Position=uPMatrix * uMVMatrix * vec4(aPos, 1.0);}</script>
 
@@ -78,7 +78,7 @@ color: #FFFFA0;
 100% { background-position: 0 0; }
 }
 
-#instructions{font-size:15px;margin-top:0px;line-height:112%;display:none;}#failinit{position: absolute; left: 50%; top: 194px; width: 70%; margin-left: -35%; margin-top: -24px; height: 48px; font-size: 20px; color: red; text-align: center; display: none; z-index:2;}#newgame{margin-top:154px;}.logo{position: absolute; left: 50%; top:50px; width: 548px; height: 93px; margin-left:-274px;}.toolbox{position: absolute; width: 48px; height: 48px; border: solid 2px rgb(128, 128, 128); background: rgba(128, 128, 128, 0.5);}#toolbox{left: 16px; bottom: 3.33%;}.tool{background: transparent;}#held{position: absolute; z-index: 2; pointer-events: none;}#terrain{display: none;}#chat{position: absolute; height: 83%; top: 0; left: 16px; color: white; overflow-y: hidden;}#clog{height: 400px;}a, a:visited{text-decoration:none;} #footer{position:absolute;bottom:0px;left:50%;margin-left:-364px;width:728px;height:90px;overflow:hidden;display:block;}#header{position:absolute;top:0px;left:50%;margin-left:-364px;width:728px;height:90px;overflow:hidden;}#pause{top:154px;height:0px;}#title{background-image:url(panorama3.jpg);background-size:1093px;animation:animatedbg 20s infinite;}#splashtexttest{position: absolute; left:530px; text-align: center; top: 110px; width: 160px; font-size: 18px; -webkit-transform: rotate(-18deg); -moz-transform: rotate(-18deg); color: yellow; text-shadow: 3px 3px 2px #222; animation: pulse 0.27s ease-in-out 0s infinite alternate; -moz-animation: pulse 0.27s ease-in-out 0s infinite alternate; -webkit-animation: pulse 0.27s ease-in-out 0s infinite alternate;}@keyframes pulse{0%{transform: scale(1,1) rotate(-19deg);}100%{transform: scale(1.07,1.07) rotate(-19deg);}}@-webkit-keyframes pulse{0%{-webkit-transform: scale(1,1) rotate(-19deg);}100%{-webkit-transform: scale(1.07,1.07) rotate(-19deg);}}@-moz-keyframes pulse{0%{-moz-transform: scale(1,1) rotate(-19deg);}100%{-moz-transform: scale(1.07,1.07) rotate(-19deg);}}.dpad{position:absolute;border:1px solid #000;border-radius:4px;padding:8px;width:50px;height:50px;font-size:40px;font-weight:bold;background:rgba(204,204,204,0.4);}#crosshair{position:absolute;top:48%;left:49%;font-size:20px;}#throbber{position: absolute; left:530px; text-align: center; top: 110px; width: 160px; font-size: 18px; -webkit-transform: rotate(-18deg); -moz-transform: rotate(-18deg); color: yellow; text-shadow: 3px 3px 2px #222; animation: pulse 0.27s ease-in-out 0s infinite alternate; -moz-animation: pulse 0.27s ease-in-out 0s infinite alternate; -webkit-animation: pulse 0.27s ease-in-out 0s infinite alternate;}@keyframes pulse{0%{transform: scale(1,1) rotate(-19deg);}100%{transform: scale(1.07,1.07) rotate(-19deg);}}@-webkit-keyframes pulse{0%{-webkit-transform: scale(1,1) rotate(-19deg);}100%{-webkit-transform: scale(1.07,1.07) rotate(-19deg);}}@-moz-keyframes pulse{0%{-moz-transform: scale(1,1) rotate(-19deg);}100%{-moz-transform: scale(1.07,1.07) rotate(-19deg);}}.dpad{position:absolute;border:1px solid #000;border-radius:4px;padding:8px;width:50px;height:50px;font-size:40px;font-weight:bold;background:rgba(204,204,204,0.4);}#crosshair{position:absolute;top:48%;left:49%;font-size:20px;}
+#instructions{font-size:15px;margin-top:0px;line-height:112%;display:none;}#failinit{position: absolute; left: 50%; top: 194px; width: 70%; margin-left: -35%; margin-top: -24px; height: 48px; font-size: 20px; color: red; text-align: center; display: none; z-index:2;}#newgame{margin-top:154px;}.logo{position: absolute; left: 50%; top:50px; width: 548px; height: 93px; margin-left:-274px;}.toolbox{position: absolute; width: 48px; height: 48px; border: solid 2px rgb(128, 128, 128); background: rgba(128, 128, 128, 0.5);}#toolbox{left: 16px; bottom: 3.33%;}.tool{background: transparent;}#held{position: absolute; z-index: 2; pointer-events: none;}#terrain{display: none;}#chat{position: absolute; height: 83%; top: 0; left: 16px; color: white; overflow-y: hidden;}#clog{height: 400px;}a, a:visited{text-decoration:none;} #footer{position:absolute;bottom:0px;left:50%;margin-left:-364px;width:728px;height:90px;overflow:hidden;display:block;}#header{position:absolute;top:0px;left:50%;margin-left:-364px;width:728px;height:90px;overflow:hidden;}#pause{top:154px;height:0px;}#title{background-image:url(images/panorama3.jpg);background-size:1093px;animation:animatedbg 20s infinite;}#splashtexttest{position: absolute; left:530px; text-align: center; top: 110px; width: 160px; font-size: 18px; -webkit-transform: rotate(-18deg); -moz-transform: rotate(-18deg); color: yellow; text-shadow: 3px 3px 2px #222; animation: pulse 0.27s ease-in-out 0s infinite alternate; -moz-animation: pulse 0.27s ease-in-out 0s infinite alternate; -webkit-animation: pulse 0.27s ease-in-out 0s infinite alternate;}@keyframes pulse{0%{transform: scale(1,1) rotate(-19deg);}100%{transform: scale(1.07,1.07) rotate(-19deg);}}@-webkit-keyframes pulse{0%{-webkit-transform: scale(1,1) rotate(-19deg);}100%{-webkit-transform: scale(1.07,1.07) rotate(-19deg);}}@-moz-keyframes pulse{0%{-moz-transform: scale(1,1) rotate(-19deg);}100%{-moz-transform: scale(1.07,1.07) rotate(-19deg);}}.dpad{position:absolute;border:1px solid #000;border-radius:4px;padding:8px;width:50px;height:50px;font-size:40px;font-weight:bold;background:rgba(204,204,204,0.4);}#crosshair{position:absolute;top:48%;left:49%;font-size:20px;}#throbber{position: absolute; left:530px; text-align: center; top: 110px; width: 160px; font-size: 18px; -webkit-transform: rotate(-18deg); -moz-transform: rotate(-18deg); color: yellow; text-shadow: 3px 3px 2px #222; animation: pulse 0.27s ease-in-out 0s infinite alternate; -moz-animation: pulse 0.27s ease-in-out 0s infinite alternate; -webkit-animation: pulse 0.27s ease-in-out 0s infinite alternate;}@keyframes pulse{0%{transform: scale(1,1) rotate(-19deg);}100%{transform: scale(1.07,1.07) rotate(-19deg);}}@-webkit-keyframes pulse{0%{-webkit-transform: scale(1,1) rotate(-19deg);}100%{-webkit-transform: scale(1.07,1.07) rotate(-19deg);}}@-moz-keyframes pulse{0%{-moz-transform: scale(1,1) rotate(-19deg);}100%{-moz-transform: scale(1.07,1.07) rotate(-19deg);}}.dpad{position:absolute;border:1px solid #000;border-radius:4px;padding:8px;width:50px;height:50px;font-size:40px;font-weight:bold;background:rgba(204,204,204,0.4);}#crosshair{position:absolute;top:48%;left:49%;font-size:20px;}
 
 #embedgame {
 	display: none;
@@ -94,7 +94,7 @@ color: #FFFFA0;
 <div id="crosshair">+</div>
 <div class="toolbox" style="left: 152px; top: 416px;"><canvas class="tool" id="hud0" height="48" width="48"></canvas></div><div class="toolbox" style="left: 210px; top: 416px;"><canvas class="tool" id="hud1" height="48" width="48"></canvas></div><div class="toolbox" style="left: 268px; top: 416px;"><canvas class="tool" id="hud2" height="48" width="48"></canvas></div><div class="toolbox" style="left: 326px; top: 416px;"><canvas class="tool" id="hud3" height="48" width="48"></canvas></div><div class="toolbox" style="left: 384px; top: 416px;"><canvas class="tool" id="hud4" height="48" width="48"></canvas></div><div class="toolbox" style="left: 442px; top: 416px;"><canvas class="tool" id="hud5" height="48" width="48"></canvas></div><div class="toolbox" style="left: 500px; top: 416px;"><canvas class="tool" id="hud6" height="48" width="48"></canvas></div><div class="toolbox" style="left: 558px; top: 416px;"><canvas class="tool" id="hud7" height="48" width="48"></canvas></div><div class="toolbox" style="left: 616px; top: 416px;"><canvas class="tool" id="hud8" height="48" width="48"></canvas></div></div>
 <div id="title" class="page" style="display: block;">
-<div class="logo"><img src="logo.png" style="height:100px;"></div>
+<div class="logo"><img src="images/logo.png" style="height:100px;"></div>
 <div id="splashtexttest">Play Online!</div>
 <div id="throbber"></div>
 <div id="failinit"></div>
@@ -133,13 +133,13 @@ ESC - Pause Game
 <script src= "music.js" ></script>
 <div id="footer-icons" style="position:absolute;bottom:10px;left:10px;display:flex;gap:10px;">
   <a href="https://www.youtube.com/@MMC-Gaming" target="_blank">
-    <img src="yt-icon.png" width="48" height="48" alt="YouTube" />
+    <img src="images/yt-icon.png" width="48" height="48" alt="YouTube" />
   </a>
   <a href="https://dc.gg/martin" target="_blank">
-    <img src="dc-icon.png" width="48" height="48" alt="Discord" />
+    <img src="images/dc-icon.png" width="48" height="48" alt="Discord" />
   </a>
   <a href="https://scratch.mit.edu/users/Martin_MMC" target="_blank">
-    <img src="scratch-icon.png" width="48" height="48" alt="Scratch" />
+    <img src="images/scratch-icon.png" width="48" height="48" alt="Scratch" />
   </a>
 </div>
 <!-- Global site tag (gtag.js) - Google Analytics
