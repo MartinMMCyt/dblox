@@ -3,10 +3,10 @@
     const sourceMP3 = document.createElement("source");
     const sourceOGG = document.createElement("source");
 
-    sourceMP3.src = `${name}.mp3`;
+    sourceMP3.src = `../audio/${name}.mp3`;
     sourceMP3.type = "audio/mpeg";
 
-    sourceOGG.src = `${name}.ogg`;
+    sourceOGG.src = `../audio/${name}.ogg`;
     sourceOGG.type = "audio/ogg";
 
     audio.appendChild(sourceMP3);
@@ -102,7 +102,7 @@
   function toggleMute() {
     isMuted = !isMuted;
     const icon = document.getElementById("muteIcon");
-    icon.src = isMuted ? "mute.png" : "unmute.png";
+    icon.src = isMuted ? "../images/mute.png" : "..images/unmute.png";
     [menuMusic, ...gameTracks].forEach(a => a.muted = isMuted);
   }
 
@@ -156,7 +156,7 @@
   // Mute icon
   const muteBtn = document.createElement("img");
   muteBtn.id = "muteIcon";
-  muteBtn.src = "unmute.png";
+  muteBtn.src = "../images/unmute.png";
   muteBtn.style.cssText = `
     position: fixed;
     bottom: 12px;
